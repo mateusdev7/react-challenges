@@ -1,0 +1,240 @@
+body {
+  background: var(--body-color);
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.containerSideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  background: var(--sidebar-color);
+  z-index: 99999;
+  padding: 16px;
+  transition: 0.3s;
+}
+
+.containerSideMenu.closeMenu {
+  width: calc(80px + 32px);
+}
+
+.topoContainer {
+  display: flex;
+  gap: 12px;
+  position: relative;
+}
+
+.iconCloseAndOpen {
+  position: absolute;
+  right: -30px;
+  top: 10px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  padding: 8px;
+  color: var(--text-menu);
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 99;
+}
+
+.topoContainer img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.topoContent {
+  transition: 0.3s;
+  white-space: nowrap;
+  transition: 0.3s;
+  & h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: 0.5s;
+    color: var(--text-color);
+  }
+  & p {
+    font-size: 0.9rem;
+    transition: 0.5s;
+    color: var(--text-color);
+  }
+}
+
+.containerNav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.containerNav .nav li span {
+  white-space: nowrap;
+  color: var(--text-color);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 14px 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background: var(--primary-color);
+      & .icon {
+        color: var(--text-menu);
+      }
+      & span {
+        color: var(--text-menu);
+      }
+    }
+    & span {
+      transition: 0.3s;
+      font-size: 1.2rem;
+    }
+    & .icon {
+      transition: 0.3s;
+      color: var(--text-color);
+    }
+  }
+}
+
+.containerMode {
+  position: absolute;
+  bottom: 40px;
+  white-space: nowrap;
+  & li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 14px 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    &:hover {
+      background: var(--primary-color);
+      & .moon {
+        color: var(--text-menu);
+      }
+      & .soon {
+        color: var(--text-menu);
+      }
+      & span {
+        color: var(--text-menu);
+      }
+      & .toggle {
+        background: var(--primary-color-light);
+      }
+    }
+    & .moon {
+      transition: 0.3s;
+      color: var(--text-color);
+    }
+    & .soon {
+      transition: 0.3s;
+      color: var(--text-color);
+    }
+  }
+  & span {
+    font-size: 1.2rem;
+    transition: 0.3s;
+    white-space: nowrap;
+    color: var(--text-color);
+  }
+}
+
+.toggle {
+  width: 44px;
+  height: 20px;
+  border-radius: 12px;
+  background: var(--primary-color);
+  transition: 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: var(--text-menu);
+    display: inline-block;
+    position: absolute;
+    left: 4px;
+    transition: 0.3s;
+  }
+}
+
+.containerSideMenu.darkMode .toggle:before {
+  left: 24px;
+}
+
+.home {
+  padding: 20px 40px;
+  height: 100vh;
+  position: fixed;
+  width: calc(100% - (80px + 32px));
+  left: calc(80px + 32px);
+  transition: 0.3s;
+}
+
+.containerSideMenu.openMenu ~ .home {
+  width: calc(100% - 280px);
+  left: 280px;
+}
+
+.containerSideMenu.closeMenu {
+  .containerNav .nav li span {
+    opacity: 0;
+    transition: 0.1s;
+  }
+  .topoContainer .topoContent h1 {
+    opacity: 0;
+    transition: 0.1s;
+  }
+
+  .topoContainer .topoContent p {
+    opacity: 0;
+    transition: 0.1s;
+  }
+
+  .iconCloseAndOpen {
+    rotate: 180deg;
+  }
+
+  .containerNav .nav li .icon {
+    margin-left: 14px;
+  }
+
+  .topoContainer img {
+    margin-left: 14px;
+  }
+
+  .containerMode li span {
+    display: none;
+  }
+
+  .containerMode li {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+}

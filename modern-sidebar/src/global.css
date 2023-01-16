@@ -1,0 +1,23 @@
+:root {
+  --body-color: #effffa;
+  --sidebar-color: #ffffff;
+  --primary-color: #8a4fff;
+  --primary-color-light: #c3bef7;
+  --toggle-color: #cfb1ee;
+  --text-color: #373737;
+  --text-menu: #ffff;
+}
+
+body.dark {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3a383c;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+  --text-menu: #ffff;
+}
+
+body {
+  transition: .4s;
+}
