@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "../styles/Sidebar.module.scss";
 import Logo from "../assets/Logo.png";
-import {
-  AiOutlineSetting,
-  AiOutlineArrowLeft,
-} from "react-icons/ai";
+import { AiOutlineSetting, AiOutlineArrowLeft } from "react-icons/ai";
 import { RxDashboard } from "react-icons/rx";
 import {
   IoAnalyticsOutline,
@@ -16,7 +13,7 @@ import { BsSun } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-  const [openMenu, setOpenMenu] = React.useState(true);
+  const [openMenu, setOpenMenu] = React.useState(false);
   const [mode, setMode] = React.useState("light");
 
   const changeMode = () => {
@@ -83,7 +80,7 @@ const Sidebar = () => {
         <ul className={styles.containerMode}>
           <button onClick={changeMode}>
             <li>
-              {mode == "dark" ? (
+              {mode == "light" ? (
                 <div className={styles.soon}>
                   <BsSun size={28} />
                 </div>
@@ -92,8 +89,8 @@ const Sidebar = () => {
                   <IoMoonOutline size={28} />
                 </div>
               )}
-              {mode == "dark" ? (
-                <span>Ligth Mode</span>
+              {mode == "light" ? (
+                <span>Light Mode</span>
               ) : (
                 <span>Dark Mode</span>
               )}

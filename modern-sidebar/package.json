@@ -19,6 +19,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
     "sass": "^1.57.1",
+    "victory": "^36.6.8",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {

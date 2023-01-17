@@ -6,16 +6,18 @@
   --toggle-color: #cfb1ee;
   --text-color: #373737;
   --text-menu: #ffff;
+  --list-color: #ffffff;
 }
 
 body.dark {
   --body-color: #18191a;
-  --sidebar-color: #242526;
-  --primary-color: #3a383c;
-  --primary-color-light: #3a3b3c;
-  --toggle-color: #fff;
+  --sidebar-color: #2A2A34;
+  --primary-color: #383844;
+  --primary-color-light: #242525;
+  --toggle-color: #242525;
   --text-color: #ccc;
   --text-menu: #ffff;
+  --list-color: #373737;
 }
 
 body {

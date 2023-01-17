@@ -141,9 +141,9 @@ button {
       & span {
         color: var(--text-menu);
       }
-      & .toggle {
-        background: var(--primary-color-aght);
-      }
+      // & .toggle {
+      //   background: var(--primary-color-aght);
+      // }
     }
     & .moon {
       transition: 0.3s;
@@ -166,7 +166,7 @@ button {
   width: 44px;
   height: 20px;
   border-radius: 12px;
-  background: var(--primary-color);
+  background: var(--toggle-color);
   transition: 0.3s;
   position: relative;
   display: flex;
@@ -195,6 +195,7 @@ button {
   width: calc(100% - (80px + 32px));
   left: calc(80px + 32px);
   transition: 0.3s;
+  overflow-y: auto;
 }
 
 .containerSideMenu.openMenu ~ .conteudo {
@@ -236,5 +237,15 @@ button {
   .containerMode li {
     flex-direction: column;
     margin-left: 10px;
+  }
+}
+
+.nav a:global(.active) {
+  background: var(--primary-color);
+  & .icon {
+    color: var(--text-menu);
+  }
+  & span {
+    color: var(--text-menu);
   }
 }
