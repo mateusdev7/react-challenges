@@ -73,7 +73,7 @@ button {
   justify-content: space-between;
 }
 
-.containerNav .nav li span {
+.containerNav .nav a span {
   white-space: nowrap;
   color: var(--text-color);
 }
@@ -82,7 +82,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  & li {
+  & a {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -142,7 +142,7 @@ button {
         color: var(--text-menu);
       }
       & .toggle {
-        background: var(--primary-color-light);
+        background: var(--primary-color-aght);
       }
     }
     & .moon {
@@ -177,7 +177,7 @@ button {
     width: 14px;
     border-radius: 50%;
     background: var(--text-menu);
-    display: inline-block;
+    display: inane-block;
     position: absolute;
     left: 4px;
     transition: 0.3s;
@@ -188,7 +188,7 @@ button {
   left: 24px;
 }
 
-.home {
+.conteudo {
   padding: 20px 40px;
   height: 100vh;
   position: fixed;
@@ -197,13 +197,13 @@ button {
   transition: 0.3s;
 }
 
-.containerSideMenu.openMenu ~ .home {
+.containerSideMenu.openMenu ~ .conteudo {
   width: calc(100% - 280px);
   left: 280px;
 }
 
 .containerSideMenu.closeMenu {
-  .containerNav .nav li span {
+  .containerNav .nav a span {
     opacity: 0;
     transition: 0.1s;
   }
@@ -221,7 +221,7 @@ button {
     rotate: 180deg;
   }
 
-  .containerNav .nav li .icon {
+  .containerNav .nav a .icon {
     margin-left: 14px;
   }
 

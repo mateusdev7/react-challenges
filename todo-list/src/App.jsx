@@ -14,13 +14,7 @@ function App() {
     e.preventDefault();
     if (todoValue !== "") {
       const id = todoItems.length + 1;
-      setTodoItems((prev) => [
-        ...prev,
-        {
-          id: id,
-          task: todoValue,
-        },
-      ]);
+      setTodoItems((prev) => [...prev, {id: id, task: todoValue}]);
       setTodoValue("");
     }
   }
