@@ -1,0 +1,23 @@
+.container,
+.container-conteudo {
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container-conteudo {
+  max-width: 1200px;
+}
+
+.animeLeft {
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
