@@ -42,18 +42,19 @@ function App() {
   const handleClickThumb = (index: number) => {
     const imageRef = imageRefs.current[index]
     const scrollContainer = scrollContainerRef.current
-    if (imageRef && scrollContainer) {
-      const { left: thumbLeft, width: thumbWidth } =
-        imageRef.getBoundingClientRect()
-      const { left: containerLeft } = scrollContainer.getBoundingClientRect()
-      const thumbCenter = thumbLeft + thumbWidth / 2
-      const containerCenter = containerLeft + scrollContainer.offsetWidth / 2
-      const offset = thumbCenter - containerCenter
-      const position = scrollContainer.scrollLeft + offset
-      setScrollPosition(position)
-      setActiveImage(index)
-      scrollContainer.scrollTo({ left: position, behavior: "smooth" })
-    }
+    if (!imageRef || !scrollContainer) return
+
+    const { left: thumbLeft, width: thumbWidth } =
+      imageRef.getBoundingClientRect()
+    const { left: containerLeft } = scrollContainer.getBoundingClientRect()
+    const thumbCenter = thumbLeft + thumbWidth / 2
+    const { offsetWidth } = scrollContainerRef.current!
+    const containerCenter = containerLeft + offsetWidth / 2
+    const offset = thumbCenter - containerCenter
+    const position = scrollContainer.scrollLeft + offset
+
+    setScrollPosition(position), setActiveImage(index)
+    scrollContainer.scrollTo({ left: position, behavior: "smooth" })
   }
 
   useEffect(() => {
